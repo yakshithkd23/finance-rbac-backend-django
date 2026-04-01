@@ -1,0 +1,42 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:15
+    container_name: finance_db
+    restart: always
+    environment:
+      POSTGRES_DB: finance
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+
+  web:
+    build: .
+    container_name: finance_backend
+    command: >
+      sh -c "
+      echo 'Waiting for postgres...' &&
+      sleep 5 &&
+      python manage.py migrate &&
+      python manage.py runserver 0.0.0.0:8000
+      "
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+# ------------------------------- GCP PRODUCTION NOTE -------------------------------
+# In production:
+# - Do NOT run PostgreSQL in Docker
+# - Use Google Cloud SQL (managed PostgreSQL)
+# - Deploy Django container on Cloud Run
+#
+# Steps:
+# 1. Build Docker image
+# 2. Push to Artifact Registry
+# 3. Deploy to Cloud Run
+# 4. Connect using Cloud SQL connection string
