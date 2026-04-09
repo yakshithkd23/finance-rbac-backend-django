@@ -4,7 +4,7 @@ A Django-based backend system for managing financial records with role-based acc
 
 ---
 [![Django Docker CI](https://github.com/yakshithkd23/finance-rbac-backend-django/actions/workflows/docker-ci.yml/badge.svg)](https://github.com/yakshithkd23/finance-rbac-backend-django/actions/workflows/docker-ci.yml)
-## 🚀 Features
+##  Features
 
 * User roles (Viewer, Analyst, Admin)
 * Financial records CRUD
@@ -15,7 +15,7 @@ A Django-based backend system for managing financial records with role-based acc
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 * Python / Django
 * PostgreSQL
@@ -23,7 +23,7 @@ A Django-based backend system for managing financial records with role-based acc
 
 ---
 
-## ⚙️ Setup
+##  Setup
 
 ### Run with Docker
 
@@ -33,7 +33,7 @@ docker compose up --build
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 * `users/` → User management & roles
 * `records/` → Financial records
@@ -42,14 +42,14 @@ docker compose up --build
 
 ---
 
-## 📘 API Reference
+##  API Reference
 
 For detailed API documentation:
-👉 https://drive.google.com/drive/folders/1RUomV5mANADqLpR7JhA5AIiXVUzwXugB?usp=drive_link
+ https://drive.google.com/drive/folders/1RUomV5mANADqLpR7JhA5AIiXVUzwXugB?usp=drive_link
 
 ---
 
-## ✅ CI/CD
+##  CI/CD
 
 This project uses GitHub Actions for Continuous Integration:
 
@@ -59,6 +59,6 @@ This project uses GitHub Actions for Continuous Integration:
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 * Yakshith K D
