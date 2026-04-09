@@ -1,0 +1,31 @@
+name: Django Docker CI 
+
+#----- standard formate of ci file for gihtub actions ------------
+# on:
+#   push:
+#     branches: [ main ]
+#   pull_request:
+
+#----------------- trigger the workflow on push or pull request to develop and test branch
+on:
+  push:
+    branches: [ Develop ]
+  pull_request:
+    branches: [ test ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Build containers
+      run: docker compose build
+
+    - name: Run migrations
+      run: docker compose run web python manage.py migrate
+
+    - name: Run tests
+      run: docker compose run web python manage.py test
